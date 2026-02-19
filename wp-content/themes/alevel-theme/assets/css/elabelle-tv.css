@@ -1,0 +1,68 @@
+.page-header--elabelleTv {
+  padding-block: 64px 162px;
+}
+@media only screen and (max-width: 767px) {
+  .page-header--elabelleTv {
+    padding-block: 88px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-header--elabelleTv .page-header__title {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-header--elabelleTv .page-header__title--lg {
+    font-size: 48px;
+  }
+}
+
+.movie-slides {
+  margin-top: -136px;
+  position: relative;
+  padding-bottom: 90px;
+  z-index: 2;
+}
+@media only screen and (max-width: 767px) {
+  .movie-slides {
+    margin-top: -50px;
+  }
+}
+.movie-slides .swiper-slide {
+  max-width: 640px;
+  width: 100%;
+}
+@media only screen and (min-width: 1600px) {
+  .movie-slides .swiper-slide {
+    max-width: 740px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .movie-slides .swiper-slide {
+    max-width: 240px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .movie-slides .swiper-slide .movie-card {
+    border-radius: 8px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .movie-slides .swiper-slide .movie-card__thumbnail {
+    border-radius: 0;
+  }
+}
+.movie-slides .swiper-pagination {
+  position: static;
+  margin-top: 21px;
+}
+.movie-slides .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-gray--light);
+  opacity: 1;
+  cursor: pointer;
+}
+.movie-slides .swiper-pagination-bullet-active {
+  background-color: var(--color-gray--cool);
+}/*# sourceMappingURL=elabelle-tv.css.map */

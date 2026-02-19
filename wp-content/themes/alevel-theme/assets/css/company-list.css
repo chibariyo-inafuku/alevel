@@ -1,0 +1,31 @@
+.search {
+  margin-bottom: 30px;
+}
+.search.-n-mt {
+  position: relative;
+  z-index: 2;
+  margin-top: -65px;
+}
+
+.company-list {
+  padding-block: 60px 10px;
+}
+.company-list .company-card--lg .company-card__logo img {
+  transition: all 0.25s ease;
+}
+.company-list .company-card--lg:hover .company-card__logo img {
+  transform: scale(1.1);
+}
+
+.other-companies__heading {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 160%;
+  letter-spacing: 1.6px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.other-companies .company-grid {
+  --c-gap:16px;
+  --r-gap:16px;
+}/*# sourceMappingURL=company-list.css.map */
