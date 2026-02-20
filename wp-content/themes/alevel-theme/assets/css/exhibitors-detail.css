@@ -319,10 +319,15 @@ body.sp-stickyMenu .footer__logo{
 .exhibitors-detail__spHeader-logo {
   text-align: center;
   height: 56px;
+  height: auto;;
+}
+.exhibitors-detail__spHeader-logo img{
+  width: 100%;
 }
 
 .exhibitors-detail__spHeader-logo img {
   height: 100%;
+  height: auto;;
 }
 
 .exhibitors-content {
@@ -396,7 +401,9 @@ body.sp-stickyMenu .footer__logo{
   margin-bottom: 15px;
   padding-inline: 15px;
 }
-
+.exhibitors-content__logo img {
+  width: 100%;
+}
 .exhibitors-content__link {
   display: flex;
   align-items: center;
@@ -765,6 +772,7 @@ body.sp-stickyMenu .footer__logo{
   align-items: center;
   height: 84px;
   gap: 30px;
+  gap: 20px;
   background-color: #C9D4E8;
 }
 
@@ -782,6 +790,7 @@ body.sp-stickyMenu .footer__logo{
 
 .exhibitor-details__companyProfile .tsr-comment__pc .tsr-comment__lead {
   max-width: 190px;
+  max-width: 210px;
   width: 100%;
   text-align: center;
 }
@@ -1227,6 +1236,8 @@ body.sp-stickyMenu .footer__logo{
   .exhibitor-details__contact .contact-detail__item-label {
     max-width: 126px;
     padding-inline: 8px;
+    min-width: 120px;
+        max-width: 120px;
   }
 }
 
@@ -1239,11 +1250,13 @@ body.sp-stickyMenu .footer__logo{
   display: flex;
   align-items: center;
   color: var(--color-primary);
+  max-width: 67%;
 }
 
 @media only screen and (max-width: 767px) {
   .exhibitor-details__contact .contact-detail__item-content {
     padding-inline: 8px;
+    max-width: 100%;
   }
 }
 

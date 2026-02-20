@@ -161,37 +161,35 @@ $has_pres = ($company_pres_toggle === 'company_president-show') && ! empty($comp
 
 </div>
 
-          <div class="exhibitors-content__logo only-pc db">
+<div class="exhibitors-content__logo only-pc db">
   <?php
-// ACFのロゴリンクURL
-$link_url = get_field('logo_url');
+  $link_url  = get_field('logo_url');
+  $logo_img  = get_field('logo_img');
+  $thumb_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+  $img_src   = $logo_img ?: $thumb_url;
+  ?>
 
-// アイキャッチ画像
-$thumb_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-?>
-
-<?php if ($link_url) : ?>
-  <a href="<?php echo esc_url($link_url); ?>" target="_blank" rel="noopener">
-<?php endif; ?>
-
-  <?php if ($thumb_url) : ?>
-    <img src="<?php echo esc_url($thumb_url); ?>"
-         alt="<?php echo esc_attr(get_the_title()); ?>"
-         width="238"
-         height="71"
-         loading="lazy">
-  <?php else : ?>
-    <!-- フォールバック画像 -->
-    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/lazy-load/comapny-logo.webp"
-         alt="<?php echo esc_attr(get_the_title()); ?>"
-         width="238"
-         height="71"
-         loading="lazy">
+  <?php if ($link_url) : ?>
+    <a href="<?php echo esc_url($link_url); ?>" target="_blank" rel="noopener">
   <?php endif; ?>
 
-<?php if ($link_url) : ?>
-  </a>
-<?php endif; ?>
+    <?php if ($img_src) : ?>
+      <img src="<?php echo esc_url($img_src); ?>"
+           alt="<?php echo esc_attr(get_the_title()); ?>"
+           width="238"
+           height="71"
+           loading="lazy">
+    <?php else : ?>
+      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/lazy-load/comapny-logo.webp"
+           alt="<?php echo esc_attr(get_the_title()); ?>"
+           width="238"
+           height="71"
+           loading="lazy">
+    <?php endif; ?>
+
+  <?php if ($link_url) : ?>
+    </a>
+  <?php endif; ?>
 </div>
 
           <div class="exhibitors-content__links">
@@ -323,11 +321,28 @@ $thumb_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 
           <div class="exhibitors-detail__spHeader-logo">
   <?php
-  $logo_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-  if ( $logo_url ) : ?>
-    <img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy">
-  <?php else : ?>
-    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/lazy-load/comapny-logo.webp" alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy">
+  $link_url  = get_field('logo_url');
+  $logo_img  = get_field('logo_img');
+  $thumb_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+  $img_src   = $logo_img ?: $thumb_url;
+  ?>
+
+  <?php if ($link_url) : ?>
+    <a href="<?php echo esc_url($link_url); ?>" target="_blank" rel="noopener">
+  <?php endif; ?>
+
+    <?php if ($img_src) : ?>
+      <img src="<?php echo esc_url($img_src); ?>"
+           alt="<?php echo esc_attr(get_the_title()); ?>"
+           loading="lazy">
+    <?php else : ?>
+      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/lazy-load/comapny-logo.webp"
+           alt="<?php echo esc_attr(get_the_title()); ?>"
+           loading="lazy">
+    <?php endif; ?>
+
+  <?php if ($link_url) : ?>
+    </a>
   <?php endif; ?>
 </div>
         </div>
