@@ -186,12 +186,15 @@ body.sp-stickyMenu .footer__logo{
   gap: 22px;
   transition: all 0.30s ease;
   transform: translateX(0);
+  min-width: 56px;
 }
 
 @media only screen and (min-width:767px){
 .exhibitors-detail__floatingMenu.is-open {
-  transform: translateX(303px);
-	transform: translateX(182px);
+  transform: translateX(182px);
+}
+.exhibitors-detail__floatingMenu.exhibitors-detail__floatingMenu--items-1.is-open {
+  transform: translateX(100px);
 }
 }
 

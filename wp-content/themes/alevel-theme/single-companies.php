@@ -444,7 +444,8 @@ $has_pres = ($company_pres_toggle === 'company_president-show') && ! empty($comp
     </div>
 
     <!-- ▼ここだけ変更：MENUは常に表示（中身だけtoggleで出し分け） -->
-    <div class="exhibitors-detail__floatingMenu">
+    <?php $floating_menu_count = ($show_catalog_menu ? 1 : 0) + ($show_contact_menu ? 1 : 0); ?>
+    <div class="exhibitors-detail__floatingMenu exhibitors-detail__floatingMenu--items-<?php echo (int) $floating_menu_count; ?>">
       <div class="exhibitors-detail__floatingMenu-btn">MENU <span class="arrow"></span></div>
       <ul class="exhibitors-detail__floatingMenu-list">
       <?php if ( $show_catalog_menu ) : ?>
