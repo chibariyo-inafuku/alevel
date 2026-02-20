@@ -370,3 +370,58 @@ add_filter('posts_distinct', function($distinct, $q){
   if ( ! $q->get('my_acf_search_on') ) return $distinct;
   return 'DISTINCT';
 }, 20, 2);
+
+
+
+/**
+ * ACF: company_contact-contact-url のみ
+ * - mailto:xxxx@xxx を許可
+ * - xxxx@xxx（メール単体）も許可し、保存時に mailto: を付与
+ */
+
+/* ==============================
+   ① バリデーション（入力チェック）
+============================== */
+add_filter('acf/validate_value/name=company_contact-contact-url', function ($valid, $value, $field, $input) {
+
+  $value = trim((string) $value);
+
+  // 未入力はそのまま（required 側に任せる）
+  if ($value === '') return $valid;
+
+  // mailto:xxxx@xxx を許可
+  if (stripos($value, 'mailto:') === 0) {
+    $email = trim(substr($value, 7));
+    return is_email($email) ? true : 'メールアドレスの形式が正しくありません';
+  }
+
+  // メール単体も許可
+  if (is_email($value)) {
+    return true;
+  }
+
+  // それ以外は通常のURLとして扱う（http/https はACF既定チェックに任せる）
+  return $valid;
+
+}, 999, 4); // ★優先度を高くして「最後に」上書きする
+
+
+/* ==============================
+   ② 保存時に mailto: を自動付与
+============================== */
+add_filter('acf/update_value/name=company_contact-contact-url', function ($value, $post_id, $field) {
+
+  $value = trim((string) $value);
+  if ($value === '') return $value;
+
+  // 既に mailto: ならそのまま
+  if (stripos($value, 'mailto:') === 0) return $value;
+
+  // メール単体なら mailto: を付ける
+  if (is_email($value)) {
+    return 'mailto:' . $value;
+  }
+
+  return $value;
+
+}, 999, 3);

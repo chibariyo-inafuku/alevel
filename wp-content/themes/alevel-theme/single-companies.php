@@ -444,28 +444,23 @@ $has_pres = ($company_pres_toggle === 'company_president-show') && ! empty($comp
     </div>
 
     <!-- ▼ここだけ変更：MENUは常に表示（中身だけtoggleで出し分け） -->
-    <div class="exhibitors-detail__floatingMenu is-open">
+    <?php $floating_menu_count = ($show_catalog_menu ? 1 : 0) + ($show_contact_menu ? 1 : 0); ?>
+    <div class="exhibitors-detail__floatingMenu exhibitors-detail__floatingMenu--items-<?php echo (int) $floating_menu_count; ?>">
       <div class="exhibitors-detail__floatingMenu-btn">MENU <span class="arrow"></span></div>
       <ul class="exhibitors-detail__floatingMenu-list">
-        
+      <?php if ( $show_catalog_menu ) : ?>
           <li class="exhibitors-detail__floatingMenu-item " style="min-width: 65px">
-						<?php if ( $show_catalog_menu ) : ?>
+						
             <a class="exhibitors-detail__floatingMenu-link js-modaltrigger" attr-modal="catalog">
               <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/lazy-load/icon_catalog_sp.webp" alt="" width="65" height="52">
               カタログ
             </a>
-						 <?php endif; ?>
+						 
           </li>
+          <?php endif; ?>
        
 
-        <!--<li class="exhibitors-detail__floatingMenu-item only-sp">
-           ▼ オンライン予約URLは今回のACF一覧に無いので仮 
-          <a href="#" class="exhibitors-detail__floatingMenu-link">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/lazy-load/icon_reserve_sp.webp" alt="" width="65" height="52">
-            オンライン <br>
-            企業説明会予約
-          </a>
-        </li>-->
+        
 
         
           <li class="exhibitors-detail__floatingMenu-item" style="min-width: 65px">
@@ -603,7 +598,17 @@ $has_pres = ($company_pres_toggle === 'company_president-show') && ! empty($comp
                     </div>
                     <div class="exhibitor-details__colContent">
                       <?php if ( $title ) : ?>
-                        <h5 class="exhibitor-details__data-title -bold"><?php echo esc_html($title); ?></h5>
+                        <h5 class="exhibitor-details__data-title -bold">
+  <?php
+    $t = (string) $title;
+
+    // ① まず HTMLエンティティを戻す（&lt;br&gt; → <br>）
+    $t = html_entity_decode($t, ENT_QUOTES, 'UTF-8');
+
+    // ② <br> 系だけ許可して出力（それ以外のHTMLは除去）
+    echo wp_kses($t, ['br' => []]);
+  ?>
+</h5>
                       <?php endif; ?>
                       <?php if ( $text ) : ?>
                         <p><?php echo nl2br(esc_html($text)); ?></p>
