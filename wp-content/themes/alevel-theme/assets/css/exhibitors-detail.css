@@ -433,6 +433,7 @@ body.sp-stickyMenu .footer__logo{
 .exhibitors-content__link-image {
   width: 122px;
   width: 150px;
+  width: 136px;
     height: 80px;
   flex-shrink: 0;
 }
@@ -456,6 +457,7 @@ body.sp-stickyMenu .footer__logo{
   height: 100%;
   object-fit: cover;
   aspect-ratio: 120/90;
+  /*object-position: top;*/
 }
 
 @media only screen and (max-width: 767px) {

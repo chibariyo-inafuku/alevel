@@ -552,7 +552,7 @@ $companies_q = new WP_Query([
             $job_text = !empty($job_names) ? implode('、', $job_names) : '';
 
             // ロゴ（アイキャッチ）
-            $logo = get_the_post_thumbnail_url($post_id, 'medium');
+            $logo = get_the_post_thumbnail_url($post_id, 'full');
             if (!$logo) $logo = get_template_directory_uri() . '/assets/img/lazy-load/comapny-logo.webp';
           ?>
 

@@ -9,16 +9,16 @@
 
     	<?php if (is_front_page()) : ?>
         <title>ALEVEL ONLINE 2027 | エラベルオンライン</title>
-        <meta name="description" content="株式会社東京商工リサーチ（TSR）が発行した東海4県の優良企業ガイド【ALEVEL-エラベル-2026年】からオンライン合同企業展を開催。株式会社東京商工リサーチ独自の企業分析法により、公正・中立の立場で優良企業を選定。企業とつながる交流の場を設けました。">
+        <meta name="description" content="株式会社東京商工リサーチ（TSR）が発行した東海4県の優良企業ガイド【ALEVEL-エラベル-2027年】からオンライン合同企業展を開催。株式会社東京商工リサーチ独自の企業分析法により、公正・中立の立場で優良企業を選定。企業とつながる交流の場を設けました。">
 	<?php elseif (is_post_type_archive('companies') || is_page('companies')) : ?>
         <title>出展社一覧 | ALEVEL ONLINE 2027 | エラベルオンライン</title>
-        <meta name="description" content="株式会社東京商工リサーチ（TSR）が発行した東海4県の優良企業ガイド【ALEVEL-エラベル-2026年】からオンライン合同企業展を開催。株式会社東京商工リサーチ独自の企業分析法により、公正・中立の立場で優良企業を選定。企業とつながる交流の場を設けました。">
+        <meta name="description" content="株式会社東京商工リサーチ（TSR）が発行した東海4県の優良企業ガイド【ALEVEL-エラベル-2027年】からオンライン合同企業展を開催。株式会社東京商工リサーチ独自の企業分析法により、公正・中立の立場で優良企業を選定。企業とつながる交流の場を設けました。">
 	<?php elseif (is_singular('companies')) : ?>
   <title><?php the_title(); ?> | ALEVEL ONLINE 2027 | エラベルオンライン</title>
-  <meta name="description" content="株式会社東京商工リサーチ（TSR）が発行した東海4県の優良企業ガイド【ALEVEL-エラベル-2026年】からオンライン合同企業展を開催。株式会社東京商工リサーチ独自の企業分析法により、公正・中立の立場で優良企業を選定。企業とつながる交流の場を設けました。">
+  <meta name="description" content="株式会社東京商工リサーチ（TSR）が発行した東海4県の優良企業ガイド【ALEVEL-エラベル-2027年】からオンライン合同企業展を開催。株式会社東京商工リサーチ独自の企業分析法により、公正・中立の立場で優良企業を選定。企業とつながる交流の場を設けました。">
 	<?php elseif (is_post_type_archive('special-stage') || is_page('special-stage')) : ?>
-	    <title>>エラベルTV | ALEVEL ONLINE 2027 | エラベルオンライン</title>
-	    <meta name="description" content="株式会社東京商工リサーチ（TSR）が発行した東海4県の優良企業ガイド【ALEVEL-エラベル-2026年】からオンライン合同企業展を開催。株式会社東京商工リサーチ独自の企業分析法により、公正・中立の立場で優良企業を選定。企業とつながる交流の場を設けました。">
+	    <title>エラベルTV | ALEVEL ONLINE 2027 | エラベルオンライン</title>
+	    <meta name="description" content="株式会社東京商工リサーチ（TSR）が発行した東海4県の優良企業ガイド【ALEVEL-エラベル-2027年】からオンライン合同企業展を開催。株式会社東京商工リサーチ独自の企業分析法により、公正・中立の立場で優良企業を選定。企業とつながる交流の場を設けました。">
 	<?php endif; ?>
 
 	
@@ -27,7 +27,7 @@
     <meta property="og:site_name" content="エラベルオンライン" />
     <meta property="og:locale" content="ja_JP" />
     <link rel="icon" type="image/jpg" href="<?php echo get_template_directory_uri() ?>/assets/img/common/1_xLPLtYhsn1.jpg">
-		<meta property="og:image" content="xxxxxxxxxxxxxxxxxxxxxxx/assets/img/ogp.jpg" />
+		
 
     <!-- ファビコン -->
     <link rel="icon" href="/favicon.ico" type="image/png" />
@@ -37,8 +37,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- フィードページのURLを指定 -->
-    <link rel="alternate" type="application/rss+xml" title="Site Title" href="xxxxxxxxxxxxxxxxxxxxxxx/" />
+    
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/common.css">

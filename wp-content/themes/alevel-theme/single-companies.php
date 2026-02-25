@@ -843,7 +843,7 @@ if ( $president_group && !empty($president_group['company_president-syousai']) )
   <?php if ( has_post_thumbnail() ) : ?>
     <?php
       the_post_thumbnail(
-        'medium',
+        'full',
         [
           'loading' => 'lazy',
           'alt' => esc_attr(get_the_title())
