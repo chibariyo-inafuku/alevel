@@ -1,0 +1,5 @@
+[2026-02-27 04:33:21 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2026-02-27 04:37:16 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2026-02-27 04:37:24 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2026-02-27 04:37:24 : INFO] - Full Cache Purge triggered by: WPO_Page_Cache::disable 
+[2026-02-27 04:37:24 : INFO] - Full Cache Purge triggered by: WP_Optimize_Minify_Cache_Functions::purge_others 

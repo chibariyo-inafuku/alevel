@@ -24,9 +24,12 @@
 	
     <!-- OGPタグ/twitterカード -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="エラベルオンライン" />
+    <meta property="og:url" content="<?php echo esc_url(home_url($_SERVER['REQUEST_URI'])); ?>" />
+    <meta property="og:site_name" content="ALEVEL ONLINE 2027 | エラベルオンライン" />
+    <meta property="og:description" content="株式会社東京商工リサーチ（TSR）が発行した東海4県の優良企業ガイド【ALEVEL-エラベル-2027年】からオンライン合同企業展を開催。株式会社東京商工リサーチ独自の企業分析法により、公正・中立の立場で優良企業を選定。企業とつながる交流の場を設けました。" />
     <meta property="og:locale" content="ja_JP" />
     <link rel="icon" type="image/jpg" href="<?php echo get_template_directory_uri() ?>/assets/img/common/1_xLPLtYhsn1.jpg">
+    <meta property="og:image" content="<?php echo get_template_directory_uri() ?>/assets/img/common/ogp.jpg" />
 		
 
     <!-- ファビコン -->
@@ -58,11 +61,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body id="<?php echo is_front_page() ? '' : 'body-sub'; ?>" <?php body_class('sp-stickyMenu'); ?>>
 <!-- Google Tag Manager (noscript) -->
-            <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFK2KZC"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-        <!-- End Google Tag Manager (noscript) -->
+
 
     <header class="header" id="header">
         <div class="header__wrapper">
